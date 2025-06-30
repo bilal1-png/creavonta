@@ -1,0 +1,20 @@
+[
+  {
+    "name": "Alice Johnson",
+    "role": "CEO, Acme Co.",
+    "avatar": "https://i.pravatar.cc/100?img=1",
+    "text": "They built an amazing site that boosted our conversions by 40 %!"
+  },
+  {
+    "name": "Carlos Nguyen",
+    "role": "Founder, StartupX",
+    "avatar": "https://i.pravatar.cc/100?img=15",
+    "text": "Outstanding quality and lightning‑fast delivery. Highly recommended."
+  },
+  {
+    "name": "Fatima Benali",
+    "role": "Marketing Lead, BrightLabs",
+    "avatar": "https://i.pravatar.cc/100?img=30",
+    "text": "The new design tripled our engagement in under a month."
+  }
+]

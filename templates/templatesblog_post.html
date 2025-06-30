@@ -1,0 +1,10 @@
+{% extends "index.html" %}
+{% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
+<article class="blog-post container">
+  <h1>{{ post.title }}</h1>
+  <p class="meta">{{ post.date.strftime('%B %d, %Y') }} · {{ post.author }}</p>
+  <div class="markdown-body">{{ post.html|safe }}</div>
+  <p><a href="{{ url_for('blog_list') }}">← Back to all posts</a></p>
+</article>
+{% endblock %}

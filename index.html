@@ -1,0 +1,1712 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Websites - Professional Web Development Services</title>
+    <meta name="description" content="Professional web development services to help your business grow online. Custom websites, UI/UX design, and full-stack solutions.">
+    <a href="/blog" class="nav-link">Blog</a>
+
+
+    <!-- Embedded CSS -->
+    <style>
+        /* Reset and Base Styles */
+        * {
+          margin: 0;
+          padding: 0;
+          box-sizing: border-box;
+        }
+
+        body {
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+          line-height: 1.6;
+          color: #111827;
+          background-color: #ffffff;
+        }
+
+        .container {
+          max-width: 1200px;
+          margin: 0 auto;
+          padding: 0 1rem;
+        }
+
+        /* Header */
+        .header {
+          position: sticky;
+          top: 0;
+          z-index: 50;
+          background-color: rgba(255, 255, 255, 0.95);
+          backdrop-filter: blur(10px);
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .header-content {
+          display: flex;
+          align-items: center;
+          justify-content: space-between;
+          padding: 1rem 0;
+        }
+
+        .logo {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+        }
+
+        .logo-img {
+          width: 40px;
+          height: 40px;
+          border-radius: 0.5rem;
+        }
+
+        .logo-text {
+          font-size: 1.25rem;
+          font-weight: 700;
+          color: #111827;
+        }
+
+        .nav {
+          display: flex;
+          align-items: center;
+          gap: 2rem;
+        }
+
+        .nav-link {
+          color: #6b7280;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .nav-link:hover {
+          color: #111827;
+        }
+
+        .mobile-menu-btn {
+          display: none;
+          background: none;
+          border: none;
+          cursor: pointer;
+          padding: 0.5rem;
+          font-size: 1.5rem;
+        }
+
+        .mobile-menu {
+          display: none;
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: rgba(0, 0, 0, 0.5);
+          z-index: 100;
+        }
+
+        .mobile-menu-content {
+          position: absolute;
+          top: 0;
+          right: 0;
+          height: 100%;
+          width: 250px;
+          background-color: white;
+          padding: 2rem;
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .mobile-nav-link {
+          color: #6b7280;
+          text-decoration: none;
+          padding: 0.5rem 0;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .mobile-cta {
+          margin-top: 1rem;
+        }
+
+        /* Buttons */
+        .btn {
+          display: inline-flex;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 0.5rem 1rem;
+          border-radius: 0.375rem;
+          font-weight: 500;
+          text-decoration: none;
+          border: none;
+          cursor: pointer;
+          transition: all 0.3s ease;
+          font-size: 0.875rem;
+        }
+
+        .btn-primary {
+          background: linear-gradient(to right, #dc2626, #ef4444);
+          color: white;
+        }
+
+        .btn-primary:hover {
+          background: linear-gradient(to right, #b91c1c, #dc2626);
+        }
+
+        .btn-outline {
+          border: 1px solid #d1d5db;
+          color: #374151;
+          background-color: white;
+        }
+
+        .btn-outline:hover {
+          background-color: #f9fafb;
+        }
+
+        .btn-large {
+          padding: 0.75rem 1.5rem;
+          font-size: 1rem;
+        }
+
+        .btn-full {
+          width: 100%;
+          justify-content: center;
+        }
+
+        /* Badge */
+        .badge {
+          display: inline-flex;
+          align-items: center;
+          padding: 0.25rem 0.75rem;
+          border-radius: 9999px;
+          font-size: 0.75rem;
+          font-weight: 600;
+          border: 1px solid #fecaca;
+          color: #dc2626;
+          background-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+          padding: 5rem 0 8rem;
+          background: linear-gradient(135deg, #f9fafb 0%, #ffffff 100%);
+        }
+
+        .hero-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: center;
+        }
+
+        .hero-text {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .hero-title {
+          font-size: 3.75rem;
+          font-weight: 700;
+          line-height: 1.1;
+          color: #111827;
+        }
+
+        .gradient-text {
+          background: linear-gradient(to right, #dc2626, #ef4444);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+          background-clip: text;
+        }
+
+        .hero-description {
+          font-size: 1.25rem;
+          color: #6b7280;
+          line-height: 1.7;
+        }
+
+        .hero-buttons {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .hero-stats {
+          display: flex;
+          gap: 2rem;
+          padding-top: 1rem;
+        }
+
+        .stat {
+          text-align: center;
+        }
+
+        .stat-number {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #111827;
+        }
+
+        .stat-label {
+          font-size: 0.875rem;
+          color: #6b7280;
+        }
+
+        .hero-image {
+          position: relative;
+        }
+
+        .hero-bg-1,
+        .hero-bg-2 {
+          position: absolute;
+          width: 18rem;
+          height: 18rem;
+          border-radius: 50%;
+          opacity: 0.2;
+          filter: blur(3rem);
+        }
+
+        .hero-bg-1 {
+          top: -1rem;
+          right: -1rem;
+          background: linear-gradient(to right, #dc2626, #ef4444);
+        }
+
+        .hero-bg-2 {
+          bottom: -1rem;
+          left: -1rem;
+          background: linear-gradient(to right, #ef4444, #f87171);
+        }
+
+        /* Hero Showcase Styles */
+        .hero-showcase {
+          position: relative;
+          z-index: 10;
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        /* Code Editor Mockup */
+        .code-editor {
+          background: #1e1e1e;
+          border-radius: 0.75rem;
+          overflow: hidden;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2);
+          transform: rotate(-2deg);
+        }
+
+        .editor-header {
+          background: #2d2d2d;
+          padding: 0.75rem 1rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .editor-controls {
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        .control {
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+        }
+
+        .control.red {
+          background: #ff5f57;
+        }
+        .control.yellow {
+          background: #ffbd2e;
+        }
+        .control.green {
+          background: #28ca42;
+        }
+
+        .editor-title {
+          color: #cccccc;
+          font-size: 0.875rem;
+          font-family: "Monaco", "Menlo", monospace;
+        }
+
+        .editor-content {
+          padding: 1rem;
+          font-family: "Monaco", "Menlo", monospace;
+          font-size: 0.875rem;
+          line-height: 1.5;
+        }
+
+        .code-line {
+          display: flex;
+          align-items: center;
+          margin-bottom: 0.25rem;
+        }
+
+        .line-number {
+          color: #6b7280;
+          width: 2rem;
+          text-align: right;
+          margin-right: 1rem;
+          user-select: none;
+        }
+
+        .code-text {
+          color: #cccccc;
+        }
+
+        .tag {
+          color: #569cd6;
+        }
+        .attr {
+          color: #9cdcfe;
+        }
+        .string {
+          color: #ce9178;
+        }
+
+        .cursor {
+          animation: blink 1s infinite;
+          color: #ffffff;
+        }
+
+        @keyframes blink {
+          0%,
+          50% {
+            opacity: 1;
+          }
+          51%,
+          100% {
+            opacity: 0;
+          }
+        }
+
+        /* Technology Stack */
+        .tech-stack {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 1rem;
+          margin: 1rem 0;
+        }
+
+        .tech-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 0.5rem;
+          padding: 1rem;
+          background: rgba(255, 255, 255, 0.9);
+          border-radius: 0.5rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          transition: transform 0.3s ease;
+        }
+
+        .tech-item:hover {
+          transform: translateY(-2px);
+        }
+
+        .tech-icon {
+          width: 2.5rem;
+          height: 2.5rem;
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 1.25rem;
+          font-weight: bold;
+          color: white;
+        }
+
+        .tech-icon.react {
+          background: #61dafb;
+          color: #000;
+        }
+        .tech-icon.next {
+          background: #000;
+        }
+        .tech-icon.js {
+          background: #f7df1e;
+          color: #000;
+        }
+        .tech-icon.css {
+          background: #1572b6;
+        }
+        .tech-icon.node {
+          background: #339933;
+        }
+        .tech-icon.db {
+          background: #336791;
+        }
+
+        .tech-item span {
+          font-size: 0.75rem;
+          font-weight: 500;
+          color: #374151;
+        }
+
+        /* Browser Mockup */
+        .browser-mockup {
+          background: white;
+          border-radius: 0.75rem;
+          overflow: hidden;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+          transform: rotate(1deg);
+          margin-top: 1rem;
+        }
+
+        .browser-header {
+          background: #f3f4f6;
+          padding: 0.75rem 1rem;
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          border-bottom: 1px solid #e5e7eb;
+        }
+
+        .browser-controls {
+          display: flex;
+          gap: 0.5rem;
+        }
+
+        .address-bar {
+          flex: 1;
+          background: white;
+          padding: 0.25rem 0.75rem;
+          border-radius: 0.375rem;
+          font-size: 0.875rem;
+          color: #6b7280;
+          border: 1px solid #d1d5db;
+        }
+
+        .browser-content {
+          height: 200px;
+          background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+          position: relative;
+        }
+
+        .website-preview {
+          position: absolute;
+          top: 1rem;
+          left: 1rem;
+          right: 1rem;
+          background: white;
+          border-radius: 0.5rem;
+          padding: 1rem;
+          box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .preview-header {
+          height: 0.75rem;
+          background: linear-gradient(to right, #dc2626, #ef4444);
+          border-radius: 0.25rem;
+          margin-bottom: 1rem;
+        }
+
+        .preview-text-line {
+          height: 0.5rem;
+          background: #e5e7eb;
+          border-radius: 0.25rem;
+          margin-bottom: 0.5rem;
+        }
+
+        .preview-text-line.long {
+          width: 100%;
+        }
+        .preview-text-line.medium {
+          width: 75%;
+        }
+        .preview-text-line.short {
+          width: 50%;
+        }
+
+        .preview-button {
+          width: 4rem;
+          height: 1.5rem;
+          background: linear-gradient(to right, #dc2626, #ef4444);
+          border-radius: 0.25rem;
+          margin-top: 1rem;
+        }
+
+        /* Section Styles */
+        .section-header {
+          text-align: center;
+          margin-bottom: 4rem;
+        }
+
+        .section-title {
+          font-size: 2.25rem;
+          font-weight: 700;
+          color: #111827;
+          margin: 1rem 0;
+        }
+
+        .section-description {
+          font-size: 1.25rem;
+          color: #6b7280;
+          max-width: 42rem;
+          margin: 0 auto;
+        }
+
+        /* Services Section */
+        .services {
+          padding: 5rem 0;
+          background-color: white;
+        }
+
+        .services-grid {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+          gap: 2rem;
+        }
+
+        .service-card {
+          background: white;
+          border: 1px solid #e5e7eb;
+          border-radius: 0.5rem;
+          padding: 2rem;
+          transition: box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+          box-shadow: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-icon {
+          width: 3rem;
+          height: 3rem;
+          background: linear-gradient(to right, #dc2626, #ef4444);
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          margin-bottom: 1rem;
+          color: white;
+          font-size: 1.5rem;
+        }
+
+        .service-title {
+          font-size: 1.25rem;
+          font-weight: 600;
+          color: #111827;
+          margin-bottom: 0.5rem;
+        }
+
+        .service-description {
+          color: #6b7280;
+          margin-bottom: 1rem;
+        }
+
+        .service-features {
+          list-style: none;
+        }
+
+        .service-features li {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 0.5rem;
+          font-size: 0.875rem;
+          color: #6b7280;
+        }
+
+        .service-features li::before {
+          content: "✓";
+          color: #10b981;
+          font-weight: bold;
+          width: 1rem;
+        }
+
+        /* About Section */
+        .about {
+          padding: 5rem 0;
+          background-color: #f9fafb;
+        }
+
+        .about-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+          align-items: center;
+        }
+
+        .about-description {
+          font-size: 1.125rem;
+          color: #6b7280;
+          line-height: 1.7;
+          margin: 1.5rem 0;
+        }
+
+        .about-features {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+        }
+
+        .about-feature {
+          display: flex;
+          align-items: flex-start;
+          gap: 0.75rem;
+        }
+
+        .about-feature::before {
+          content: "✓";
+          color: #10b981;
+          font-weight: bold;
+          width: 1.5rem;
+          height: 1.5rem;
+          margin-top: 0.125rem;
+        }
+
+        .about-feature h3 {
+          font-weight: 600;
+          color: #111827;
+          margin-bottom: 0.25rem;
+        }
+
+        .about-feature p {
+          color: #6b7280;
+        }
+
+        .about-image {
+          position: relative;
+        }
+
+        .about-img {
+          width: 100%;
+          height: auto;
+          border-radius: 1rem;
+          box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-card {
+          position: absolute;
+          bottom: -1.5rem;
+          left: -1.5rem;
+          background: white;
+          padding: 1.5rem;
+          border-radius: 0.75rem;
+          box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+        }
+
+        .about-card-content {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+        }
+
+        .about-card-logo {
+          width: 3rem;
+          height: 3rem;
+          border-radius: 0.5rem;
+        }
+
+        .about-card-title {
+          font-weight: 600;
+          color: #111827;
+        }
+
+        .about-card-subtitle {
+          font-size: 0.875rem;
+          color: #6b7280;
+        }
+
+        /* Contact Section */
+        .contact {
+          padding: 5rem 0;
+          background-color: #f9fafb;
+        }
+
+        .contact-content {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 3rem;
+        }
+
+        .contact-info {
+          display: flex;
+          flex-direction: column;
+          gap: 2rem;
+        }
+
+        .contact-item {
+          display: flex;
+          align-items: flex-start;
+          gap: 1rem;
+        }
+
+        .contact-icon {
+          width: 3rem;
+          height: 3rem;
+          background: linear-gradient(to right, #dc2626, #ef4444);
+          border-radius: 0.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          color: white;
+          font-size: 1.5rem;
+        }
+
+        .contact-item h3 {
+          font-weight: 600;
+          color: #111827;
+          margin-bottom: 0.25rem;
+        }
+
+        .contact-item p {
+          color: #6b7280;
+        }
+
+        .contact-form-container {
+          background: white;
+          padding: 2rem;
+          border-radius: 0.5rem;
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+        }
+
+        .contact-form {
+          display: flex;
+          flex-direction: column;
+          gap: 1.5rem;
+        }
+
+        .form-row {
+          display: grid;
+          grid-template-columns: 1fr 1fr;
+          gap: 1rem;
+        }
+
+        .form-group {
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .form-group label {
+          font-size: 0.875rem;
+          font-weight: 500;
+          color: #374151;
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+          padding: 0.5rem 0.75rem;
+          border: 1px solid #d1d5db;
+          border-radius: 0.375rem;
+          font-size: 0.875rem;
+          transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+          outline: none;
+          border-color: #dc2626;
+          box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.1);
+        }
+
+        .form-group textarea {
+          resize: vertical;
+          min-height: 100px;
+        }
+
+        /* Footer */
+        .footer {
+          background-color: #111827;
+          color: white;
+          padding: 3rem 0;
+        }
+
+        .footer-content {
+          display: grid;
+          grid-template-columns: repeat(4, 1fr);
+          gap: 2rem;
+          margin-bottom: 2rem;
+        }
+
+        .footer-logo {
+          display: flex;
+          align-items: center;
+          gap: 0.5rem;
+          margin-bottom: 1rem;
+        }
+
+        .footer-logo-img {
+          width: 2rem;
+          height: 2rem;
+          border-radius: 0.5rem;
+        }
+
+        .footer-logo-text {
+          font-size: 1.125rem;
+          font-weight: 700;
+        }
+
+        .footer-description {
+          color: #9ca3af;
+        }
+
+        .footer-title {
+          font-weight: 600;
+          margin-bottom: 1rem;
+        }
+
+        .footer-links {
+          list-style: none;
+          display: flex;
+          flex-direction: column;
+          gap: 0.5rem;
+        }
+
+        .footer-links a {
+          color: #9ca3af;
+          text-decoration: none;
+          transition: color 0.3s ease;
+        }
+
+        .footer-links a:hover {
+          color: white;
+        }
+
+        .footer-bottom {
+          border-top: 1px solid #374151;
+          padding-top: 2rem;
+          text-align: center;
+          color: #9ca3af;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+          .hero-title {
+            font-size: 3rem;
+          }
+
+          .section-title {
+            font-size: 2rem;
+          }
+        }
+
+        @media (max-width: 768px) {
+          .nav {
+            display: none;
+          }
+
+          .mobile-menu-btn {
+            display: block;
+          }
+
+          .hero-content {
+            grid-template-columns: 1fr;
+            text-align: center;
+          }
+
+          .hero-title {
+            font-size: 2.5rem;
+          }
+
+          .hero-buttons {
+            flex-direction: column;
+            align-items: center;
+          }
+
+          .hero-stats {
+            justify-content: center;
+          }
+
+          .about-content {
+            grid-template-columns: 1fr;
+          }
+
+          .contact-content {
+            grid-template-columns: 1fr;
+          }
+
+          .footer-content {
+            grid-template-columns: repeat(2, 1fr);
+          }
+
+          .form-row {
+            grid-template-columns: 1fr;
+          }
+
+          /* Responsive adjustments for hero showcase */
+          .hero-showcase {
+            margin-top: 2rem;
+          }
+
+          .code-editor,
+          .browser-mockup {
+            transform: none;
+          }
+
+          .tech-stack {
+            grid-template-columns: repeat(2, 1fr);
+          }
+        }
+
+        @media (max-width: 640px) {
+          .hero-buttons {
+            width: 100%;
+          }
+
+          .hero-buttons .btn {
+            width: 100%;
+            justify-content: center;
+          }
+
+          .hero-stats {
+            flex-direction: column;
+            gap: 1rem;
+          }
+
+          .services-grid {
+            grid-template-columns: 1fr;
+          }
+
+          .footer-content {
+            grid-template-columns: 1fr;
+          }
+
+          .about-card {
+            position: static;
+            margin-top: 1rem;
+          }
+
+          .tech-stack {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0.5rem;
+          }
+
+          .tech-item {
+            padding: 0.75rem 0.5rem;
+          }
+
+          .tech-icon {
+            width: 2rem;
+            height: 2rem;
+            font-size: 1rem;
+          }
+        }
+        /* === Testimonials === */
+.testimonials {
+  padding: 5rem 0;
+  background-color: #ffffff;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 2rem;
+}
+.testimonial-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 1rem;
+  padding: 2rem;
+  border: 1px solid #e5e7eb;
+  border-radius: .75rem;
+  background: #f9fafb;
+  box-shadow: 0 4px 6px -1px rgba(0,0,0,.05);
+}
+.testimonial-avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.testimonial-text {
+  font-size: .95rem;
+  line-height: 1.5;
+  color: #374151;
+}
+.testimonial-name {
+  font-weight: 600;
+  color: #111827;
+}
+.testimonial-role {
+  font-size: .8rem;
+  color: #6b7280;
+}
+
+/* --- Slider Styles --- */
+.slider-section {
+  background-color: #f9fafb;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+.slider {
+  position: relative;
+  overflow: hidden;
+  height: 180px;
+}
+.slide {
+  display: none;
+  padding: 1.5rem;
+  transition: opacity 0.5s ease;
+}
+.slide.active {
+  display: block;
+}
+.slider-nav {
+  margin-top: 1rem;
+}
+.slider-nav button {
+  background-color: #dc2626;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  margin: 0 0.5rem;
+  font-size: 1rem;
+  border-radius: 0.375rem;
+  cursor: pointer;
+}
+.slider-nav button:hover {
+  background-color: #b91c1c;
+}
+
+
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <img src="images/logo.png" alt="RV Logo" class="logo-img">
+
+
+
+
+                    <span class="logo-text">creavonta</span>
+                </div>
+                <nav class="nav" id="nav">
+                    <a href="#services" class="nav-link">Services</a>
+                    <a href="#about" class="nav-link">About</a>
+                    <a href="#contact" class="nav-link">Contact</a>
+                </nav>
+                <a href="https://wa.me/212718659760" target="_blank" rel="noopener noreferrer">
+                  <button class="btn btn-primary">Get Started</button>
+                </a>
+
+                <button class="mobile-menu-btn" id="mobile-menu-btn">☰</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobile-menu">
+        <div class="mobile-menu-content">
+            <a href="#services" class="mobile-nav-link">Services</a>
+            <a href="#about" class="mobile-nav-link">About</a>
+            <a href="#contact" class="mobile-nav-link">Contact</a>
+            <button class="btn btn-primary mobile-cta">Get Started</button>
+        </div>
+    </div>
+
+
+
+  
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <div class="badge">Professional Web Development</div>
+                    <h1 class="hero-title">
+                        Creating Stunning
+                        <span class="gradient-text">Websites</span>
+                    </h1>
+                    <p class="hero-description">
+                        We craft beautiful, responsive, and high-performing websites that help your business grow. From
+                        concept to launch, we handle everything.
+                    </p>
+                    <div class="hero-buttons">
+                        <a href="https://wa.me/212718659760" target="_blank" rel="noopener noreferrer">
+                          <button class="btn btn-primary btn-large">
+                                  Start Your Project →
+                          </button>
+                        </a>
+
+                        <button class="btn btn-outline btn-large">View Our Work</button>
+                    </div>
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">50+</div>
+                            <div class="stat-label">Projects Completed</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">100%</div>
+                            <div class="stat-label">Client Satisfaction</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">24/7</div>
+                            <div class="stat-label">Support</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="hero-image">
+                    <div class="hero-showcase">
+                        <!-- Code Editor Mockup -->
+                        <div class="code-editor">
+                            <div class="editor-header">
+                                <div class="editor-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="editor-title">index.html</div>
+                            </div>
+                            <div class="editor-content">
+                                <div class="code-line">
+                                    <span class="line-number">1</span>
+                                    <span class="code-text"><span class="tag">&lt;!DOCTYPE</span> <span class="attr">html</span><span class="tag">&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">2</span>
+                                    <span class="code-text"><span class="tag">&lt;html</span> <span class="attr">lang</span>=<span class="string">"en"</span><span class="tag">&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">3</span>
+                                    <span class="code-text">  <span class="tag">&lt;head&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">4</span>
+                                    <span class="code-text">    <span class="tag">&lt;title&gt;</span>Your Website<span class="tag">&lt;/title&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">5</span>
+                                    <span class="code-text">  <span class="tag">&lt;/head&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">6</span>
+                                    <span class="code-text">  <span class="tag">&lt;body&gt;</span></span>
+                                </div>
+                                <div class="code-line">
+                                    <span class="line-number">7</span>
+                                    <span class="code-text">    <span class="tag">&lt;h1&gt;</span>Welcome!<span class="tag">&lt;/h1&gt;</span></span>
+                                </div>
+                                <div class="code-line typing">
+                                    <span class="line-number">8</span>
+                                    <span class="code-text">    <span class="tag">&lt;p&gt;</span><span class="cursor">|</span></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Technology Stack -->
+                        <div class="tech-stack">
+                            <div class="tech-item">
+                                <div class="tech-icon react">⚛️</div>
+                                <span>React</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon next">▲</div>
+                                <span>Next.js</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon js">JS</div>
+                                <span>JavaScript</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon css">🎨</div>
+                                <span>CSS3</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon node">🟢</div>
+                                <span>Node.js</span>
+                            </div>
+                            <div class="tech-item">
+                                <div class="tech-icon db">🗄️</div>
+                                <span>Database</span>
+                            </div>
+                        </div>
+
+                        <!-- Browser Mockup -->
+                        <div class="browser-mockup">
+                            <div class="browser-header">
+                                <div class="browser-controls">
+                                    <span class="control red"></span>
+                                    <span class="control yellow"></span>
+                                    <span class="control green"></span>
+                                </div>
+                                <div class="address-bar">
+                                    <span>🔒 yourwebsite.com</span>
+                                </div>
+                            </div>
+                            <div class="browser-content">
+                                <div class="website-preview">
+                                    <div class="preview-header"></div>
+                                    <div class="preview-content">
+                                        <div class="preview-text-line long"></div>
+                                        <div class="preview-text-line medium"></div>
+                                        <div class="preview-text-line short"></div>
+                                        <div class="preview-button"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero-bg-1"></div>
+                    <div class="hero-bg-2"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Our Services</div>
+                <h2 class="section-title">What We Do Best</h2>
+                <p class="section-description">
+                    We offer comprehensive web development services to bring your vision to life
+                </p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">💻</div>
+                    <h3 class="service-title">Custom Web Development</h3>
+                    <p class="service-description">
+                        Tailored websites built from scratch using modern technologies and best practices.
+                    </p>
+                    <ul class="service-features">
+                        <li>React & Next.js</li>
+                        <li>Full-stack Solutions</li>
+                        <li>Database Integration</li>
+                    </ul>
+                </div>
+
+
+
+                <div class="service-card">
+                    <div class="service-icon">🎨</div>
+                    <h3 class="service-title">UI/UX Design</h3>
+                    <p class="service-description">
+                        Beautiful, intuitive designs that provide exceptional user experiences.
+                    </p>
+                    <ul class="service-features">
+                        <li>User Research</li>
+                        <li>Wireframing & Prototyping</li>
+                        <li>Visual Design</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">📱</div>
+                    <h3 class="service-title">Responsive Design</h3>
+                    <p class="service-description">
+                        Websites that look perfect on all devices, from mobile to desktop.
+                    </p>
+                    <ul class="service-features">
+                        <li>Mobile-First Approach</li>
+                        <li>Cross-Browser Compatible</li>
+                        <li>Performance Optimized</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">⚡</div>
+                    <h3 class="service-title">Performance Optimization</h3>
+                    <p class="service-description">
+                        Lightning-fast websites that rank well in search engines.
+                    </p>
+                    <ul class="service-features">
+                        <li>SEO Optimization</li>
+                        <li>Speed Optimization</li>
+                        <li>Analytics Integration</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">👥</div>
+                    <h3 class="service-title">Consultation & Strategy</h3>
+                    <p class="service-description">
+                        Expert guidance to help you make the right decisions for your project.
+                    </p>
+                    <ul class="service-features">
+                        <li>Technology Selection</li>
+                        <li>Project Planning</li>
+                        <li>Ongoing Support</li>
+                    </ul>
+                </div>
+
+                <div class="service-card">
+                    <div class="service-icon">🏆</div>
+                    <h3 class="service-title">Maintenance & Support</h3>
+                    <p class="service-description">
+                        Ongoing maintenance and support to keep your website running smoothly.
+                    </p>
+                    <ul class="service-features">
+                        <li>Regular Updates</li>
+                        <li>Security Monitoring</li>
+                        <li>24/7 Support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<!-- About Section -->
+<section id="about" class="about">
+  <div class="container">
+    <div class="about-content">
+      <div class="about-text">
+        <div class="badge">About Us</div>
+        <h2 class="section-title">Passionate About Creating Digital Experiences</h2>
+        <p class="about-description">
+          We are a team of dedicated web developers and designers who believe in the power of great websites. With
+          years of experience and a passion for innovation, we help businesses establish a strong online presence.
+        </p>
+        <div class="about-features">
+          <div class="about-feature">
+            <div>
+              <h3>Expert Team</h3>
+              <p>Skilled developers and designers with proven track records</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div>
+              <h3>Modern Technologies</h3>
+              <p>Using the latest tools and frameworks for optimal results</p>
+            </div>
+          </div>
+          <div class="about-feature">
+            <div>
+              <h3>Client-Focused</h3>
+              <p>Your success is our priority, every step of the way</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="about-image">
+        <img src="images/team_work.png" alt="Team working" class="about-img">
+        <div class="about-card">
+          <div class="about-card-content">
+            <img src="images/logo.png" alt="RV Logo" class="logo-img">
+            <div>
+              <div class="about-card-title">Creating Websites</div>
+              <div class="about-card-subtitle">Your Web Development Partner</div>
+            </div>
+
+</section>
+
+
+
+<!-- Slide Showcase Section -->
+<!-- <section class="slider-section">
+  <div class="container">
+    <h2 class="section-title">Our Highlights</h2>
+    <div class="slider" id="slider">
+      <div class="slide active">
+        <h3>Slide 1: Fast & Responsive</h3>
+        <p>All our websites are fully responsive and load in under 2 seconds.</p>
+      </div>
+      <div class="slide">
+        <h3>Slide 2: Custom Features</h3>
+        <p>We build features tailored to your exact business needs.</p>
+      </div>
+      <div class="slide">
+        <h3>Slide 3: Ongoing Support</h3>
+        <p>We provide maintenance and upgrades long after launch.</p>
+      </div>
+    </div>
+    <div class="slider-nav">
+      <button onclick="prevSlide()">←</button>
+      <button onclick="nextSlide()">→</button>
+    </div>
+  </div>
+</section>
+-->
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">Get In Touch</div>
+                <h2 class="section-title">Ready to Start Your Project?</h2>
+                <p class="section-description">
+                    Let's discuss your ideas and bring them to life. Contact us today for a free consultation.
+                </p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">✉️</div>
+                        <div>
+                            <h3>Email Us</h3>
+                            <p>creavonta@gmail.com</p>
+                            
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">📞</div>
+                        <div>
+                            <h3>Call Us</h3>
+                            <p>+212 718 659 760</p>
+                            
+                        </div>
+                    </div>
+                    
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contact-form">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="projectType">Project Type</label>
+                            <select id="projectType" name="projectType" required>
+                                <option value="">Select a service</option>
+                                <option value="custom">Custom Web Development</option>
+                                <option value="design">UI/UX Design</option>
+                                <option value="ecommerce">E-commerce Website</option>
+                                <option value="portfolio">Portfolio Website</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Message</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your project..." rows="4" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-full">
+                            Send Message →
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="images/logo.png" alt="RV Logo" class="footer-logo-img">
+                        <span class="footer-logo-text">Creating Websites</span>
+                    </div>
+                    <p class="footer-description">Professional web development services to help your business grow online.</p>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Services</h3>
+                    <ul class="footer-links">
+                        <li><a href="#services">Web Development</a></li>
+                        <li><a href="#services">UI/UX Design</a></li>
+                        <li><a href="#services">E-commerce</a></li>
+                        <li><a href="#services">Maintenance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Company</h3>
+                    <ul class="footer-links">
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Blog</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3 class="footer-title">Connect</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://www.instagram.com/creavonta/" target="_blank">Instagram</a></li>
+                        <li><a href="https://wa.me/212718659760 " target="_blank">WhatsApp</a></li>
+                        <li><a href="https://www.facebook.com/profile.php?id=61563006805783 " target="_blank">Facebook</a></li>
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Creating Websites. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Embedded JavaScript -->
+    <script>
+        // Mobile menu functionality
+        document.addEventListener("DOMContentLoaded", () => {
+          const mobileMenuBtn = document.getElementById("mobile-menu-btn")
+          const mobileMenu = document.getElementById("mobile-menu")
+          const mobileNavLinks = document.querySelectorAll(".mobile-nav-link")
+
+          if (mobileMenuBtn && mobileMenu) {
+            mobileMenuBtn.addEventListener("click", () => {
+              mobileMenu.style.display = mobileMenu.style.display === "block" ? "none" : "block"
+            })
+
+            // Close mobile menu when clicking outside
+            mobileMenu.addEventListener("click", (e) => {
+              if (e.target === mobileMenu) {
+                mobileMenu.style.display = "none"
+              }
+            })
+
+            // Close mobile menu when clicking on nav links
+            mobileNavLinks.forEach((link) => {
+              link.addEventListener("click", () => {
+                mobileMenu.style.display = "none"
+              })
+            })
+          }
+
+          // Smooth scrolling for navigation links
+          const navLinks = document.querySelectorAll('a[href^="#"]')
+
+          navLinks.forEach((link) => {
+            link.addEventListener("click", (e) => {
+              e.preventDefault()
+              const targetId = link.getAttribute("href")
+              const targetSection = document.querySelector(targetId)
+
+              if (targetSection) {
+                const headerHeight = document.querySelector(".header").offsetHeight
+                const targetPosition = targetSection.offsetTop - headerHeight
+
+                window.scrollTo({
+                  top: targetPosition,
+                  behavior: "smooth",
+                })
+              }
+            })
+          })
+
+          // Contact form handling
+          //const contactForm = document.getElementById("contact-form")
+
+          //if (contactForm) {
+           //contactForm.addEventListener("submit", (e) => {
+              //e.preventDefault()
+          // Contact form handling
+const contactForm = document.getElementById("contact-form");
+
+if (contactForm) {
+  contactForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(contactForm);
+    const data = Object.fromEntries(formData);
+
+    // Simple validation
+    if (!data.firstName || !data.lastName || !data.email || !data.message) {
+      alert("Please fill in all required fields.");
+      return;
+    }
+
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(data.email)) {
+      alert("Please enter a valid email address.");
+      return;
+    }
+
+    const submitBtn = contactForm.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+
+    submitBtn.innerHTML = "Sending...";
+    submitBtn.disabled = true;
+
+    setTimeout(() => {
+      alert("Thank you for your message! We'll get back to you soon.");
+      contactForm.reset();
+      submitBtn.innerHTML = originalText;
+      submitBtn.disabled = false;
+    }, 2000);
+  });
+}
+<!-- Testimonials Section -->
+<section id="testimonials" class="testimonials">
+  <div class="container">
+    <div class="section-header">
+      <div class="badge">Testimonials</div>
+      <h2 class="section-title">What Our Clients Say</h2>
+    </div>
+
+    <div class="testimonials-grid">
+      {% for t in testimonials %}
+      <figure class="testimonial-card">
+        <img src="{{ t.avatar }}" alt="{{ t.name }}" class="testimonial-avatar">
+        <blockquote class="testimonial-text">“{{ t.text }}”</blockquote>
+        <figcaption>
+          <span class="testimonial-name">{{ t.name }}</span>
+          <span class="testimonial-role">{{ t.role }}</span>
+        </figcaption>
+      </figure>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+
+
+
+
+              // Get form data
+              const formData = new FormData(contactForm)
+              const data = Object.fromEntries(formData)
+
+              // Simple form validation
+              if (!data.firstName || !data.lastName || !data.email || !data.message) {
+                alert("Please fill in all required fields.")
+                return
+              }
+
+              // Email validation
+              const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+              if (!emailRegex.test(data.email)) {
+                alert("Please enter a valid email address.")
+                return
+              }
+
+              // Simulate form submission
+              const submitBtn = contactForm.querySelector('button[type="submit"]')
+              const originalText = submitBtn.innerHTML
+
+              submitBtn.innerHTML = "Sending..."
+              submitBtn.disabled = true
+
+              // Simulate API call
+              setTimeout(() => {
+                alert("Thank you for your message! We'll get back to you soon.")
+                contactForm.reset()
+                submitBtn.innerHTML = originalText
+                submitBtn.disabled = false
+              }, 2000)
+            })
+          }
+
+          // Add hover effects to service cards
+          const serviceCards = document.querySelectorAll(".service-card")
+          serviceCards.forEach((card) => {
+            card.addEventListener("mouseenter", () => {
+              card.style.transform = "translateY(-5px)"
+            })
+
+            card.addEventListener("mouseleave", () => {
+              card.style.transform = "translateY(0)"
+            })
+          })
+
+          // Add loading animation to buttons
+          const buttons = document.querySelectorAll(".btn")
+          buttons.forEach((btn) => {
+            btn.addEventListener("click", function (e) {
+              this.style.transform = "scale(0.98)"
+              setTimeout(() => {
+                this.style.transform = "scale(1)"
+              }, 150)
+            })
+          })
+        })
+    </script>
+</body>
+</html>
