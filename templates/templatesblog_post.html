@@ -1,11 +1,13 @@
-﻿{% extends "index.html" %}
+ï»¿{% extends "index.html" %}
 {% block content %}
 <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
 <article class="blog-post container">
   <h1>{{ post.title }}</h1>
-  <p class="meta">{{ post.date.strftime('%BÂ %d,Â %Y') }}Â Â·Â {{ post.author }}</p>
+  <p class="meta">{{ post.date.strftime('%BÃ‚Â %d,Ã‚Â %Y') }}Ã‚Â Ã‚Â·Ã‚Â {{ post.author }}</p>
   <div class="markdown-body">{{ post.html|safe }}</div>
-  <p><a href="{{ url_for('blog_list') }}">â†Â Back to all posts</a></p>
+  <p><a href="{{ url_for('blog_list') }}">Ã¢â€ ÂÃ‚Â Back to all posts</a></p>
 </article>
 {% endblock %}
+
+
 

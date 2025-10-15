@@ -1,4 +1,4 @@
-﻿{% extends "index.html" %}
+ï»¿{% extends "index.html" %}
 {% block content %}  <!-- choose any block defined in index.html -->
 <link rel="stylesheet" href="{{ url_for('static', filename='blog.css') }}">
 <section class="blog-list container">
@@ -7,12 +7,14 @@
     {% for p in posts %}
     <article class="post-card">
       <h2><a href="{{ url_for('blog_post', slug=p.slug) }}">{{ p.title }}</a></h2>
-      <p class="meta">{{ p.date.strftime('%BÂ %d,Â %Y') }}Â Â·Â {{ p.author }}</p>
+      <p class="meta">{{ p.date.strftime('%BÃ‚Â %d,Ã‚Â %Y') }}Ã‚Â Ã‚Â·Ã‚Â {{ p.author }}</p>
       <p>{{ p.excerpt }}</p>
-      <a class="read-more" href="{{ url_for('blog_post', slug=p.slug) }}">ReadÂ â†’</a>
+      <a class="read-more" href="{{ url_for('blog_post', slug=p.slug) }}">ReadÃ‚Â Ã¢â€ â€™</a>
     </article>
     {% endfor %}
   </div>
 </section>
 {% endblock %}
+
+
 

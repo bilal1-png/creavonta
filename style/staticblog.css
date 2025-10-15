@@ -1,3 +1,4 @@
+ï»¿@charset "UTF-8";
 .blog-title      { font-size: 2.25rem; margin: 2rem 0; text-align:center; }
 .post-grid       { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:2rem; }
 .post-card       { padding:1.5rem; border:1px solid #e5e7eb; border-radius:.75rem; background:#fff; }
@@ -7,3 +8,4 @@
 .blog-post h1    { margin-top:2rem; font-size:2rem; }
 .blog-post .meta { color:#6b7280; margin-bottom:2rem; }
 .markdown-body img { max-width:100%; height:auto; border-radius:.5rem; }
+
